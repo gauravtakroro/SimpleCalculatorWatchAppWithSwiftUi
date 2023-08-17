@@ -10,57 +10,43 @@ import SwiftUI
 struct CalcUiView: View {
     @StateObject var calculatorViewModel = CalcViewModel()
     let buttons: [[CalcButton]] = [
-        [.divide],
+        [.clear, .negative, .percent, .divide],
         [.seven, .eight, .nine, .mutliply],
         [.four, .five, .six, .subtract],
         [.one, .two, .three, .add],
         [.zero, .decimal, .equal],
     ]
-    
+        
     var body: some View {
-        ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
-            VStack {
-                HStack (alignment: .top) {
-                    Spacer()
-                    Text(calculatorViewModel.expressionOfCalculations)
-                        .font(.system(size: 20))
-                        .foregroundColor(.white).lineLimit(4).frame(alignment: .trailing)
-                }.frame(maxWidth: .infinity)
-                Spacer()
-                
-                // Text display
-                HStack {
-                    Spacer()
-                    Text(calculatorViewModel.resultValueDisplayed)
-                        .bold()
-                        .font(.system(size: 100))
-                        .minimumScaleFactor(0.4)
-                        .foregroundColor(.white)
-                }
-                .padding()
-                // Our buttons
-                ForEach(buttons, id: \.self) { row in
-                    HStack(spacing: 12) {
-                        ForEach(row, id: \.self) { item in
-                            Button(action: {
-                                //  Button Action Implementation
-                                self.calculatorViewModel.didTap(button: item)
-                            }, label: {
+        GeometryReader { geo in
+            ZStack {
+                Color.black.edgesIgnoringSafeArea(.all)
+                VStack {
+                    // Text display
+                    HStack {
+                        Spacer()
+                        Text(calculatorViewModel.resultValueDisplayed)
+                            .bold()
+                            .font(.system(size: 20))
+                            .foregroundColor(.white)
+                            .frame(alignment: .trailing)
+                    }.frame(maxWidth: .infinity)
+                    // Our buttons
+                    ForEach(buttons, id: \.self) { row in
+                        HStack {
+                            ForEach(row, id: \.self) { item in
                                 Text(item.rawValue)
-                                    .font(.system(size: 32))
-                                    .frame(
-                                        width: self.buttonWidth(item: item),
-                                        height: self.buttonHeight()
-                                    )
-                                    .background(self.buttonBackgroundColor(item: item))
-                                    .foregroundColor(.white)
-                                    .cornerRadius(self.buttonWidth(item: item)/2)
-                            })
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.white) .frame(
+                                        width: self.buttonWidth(item: item, geoWidth: geo.size.width),
+                                        height: self.buttonHeight(geoWidth: geo.size.width)
+                                    ).background(self.buttonBackgroundColor(item: item)).buttonStyle(.bordered) .cornerRadius(self.buttonWidth(item: item, geoWidth: geo.size.width)/2).onTapGesture {
+                                        self.calculatorViewModel.didTap(button: item)
+                                    }
+                            }
                         }
                     }
-                    .padding(.bottom, 3)
-                }
+                }.padding(.vertical, -10)
             }
         }
     }
@@ -68,15 +54,15 @@ struct CalcUiView: View {
 
 extension CalcUiView {
     
-    func buttonWidth(item: CalcButton) -> CGFloat {
+    func buttonWidth(item: CalcButton, geoWidth: Double) -> CGFloat {
         if item == .equal  {
-            return ((UIScreen.main.bounds.width - (4*12)) / 4) * 2
+            return ((geoWidth - (2*12)) / 3.4) * 2
         }
-        return (UIScreen.main.bounds.width - (5*12)) / 4
+        return (geoWidth - (3*12)) / 3.4
     }
 
-    func buttonHeight() -> CGFloat {
-        return (UIScreen.main.bounds.width - (5*12)) / 4
+    func buttonHeight(geoWidth: Double) -> CGFloat {
+        return (geoWidth - (3*12)) / 6.2
     }
     
     func buttonBackgroundColor(item: CalcButton) -> Color {

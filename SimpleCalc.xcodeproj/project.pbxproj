@@ -89,10 +89,10 @@
 				93FB2E422A8EA1A300039CF0 /* Extensions */,
 				93FB2E392A8E9F3B00039CF0 /* CalcUiViews */,
 				93FB2E1C2A8E9C4E00039CF0 /* SimpleCalcApp.swift */,
+				93FB2E402A8EA15B00039CF0 /* CalcViewModel.swift */,
 				93FB2E1E2A8E9C4E00039CF0 /* ContentView.swift */,
 				93FB2E202A8E9C5000039CF0 /* Assets.xcassets */,
 				93FB2E222A8E9C5000039CF0 /* Preview Content */,
-				93FB2E402A8EA15B00039CF0 /* CalcViewModel.swift */,
 			);
 			path = "SimpleCalc Watch App";
 			sourceTree = "<group>";
