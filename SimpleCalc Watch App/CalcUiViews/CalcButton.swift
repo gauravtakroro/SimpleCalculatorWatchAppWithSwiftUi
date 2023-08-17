@@ -25,9 +25,10 @@ enum CalcButton: String {
     case equal = "="
     case clear = "AC"
     case decimal = "."
+    case percent = "%"
+    case negative = "+/-"
 }
 
 enum ArithmeticOperation {
     case add, subtract, multiply, divide, none
 }
-
