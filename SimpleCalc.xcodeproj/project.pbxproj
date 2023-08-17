@@ -12,6 +12,7 @@
 		93FB2E1F2A8E9C4E00039CF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FB2E1E2A8E9C4E00039CF0 /* ContentView.swift */; };
 		93FB2E212A8E9C5000039CF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FB2E202A8E9C5000039CF0 /* Assets.xcassets */; };
 		93FB2E242A8E9C5000039CF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FB2E232A8E9C5000039CF0 /* Preview Assets.xcassets */; };
+		93FB2E3B2A8E9F5900039CF0 /* CalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FB2E3A2A8E9F5900039CF0 /* CalcButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		93FB2E1E2A8E9C4E00039CF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		93FB2E202A8E9C5000039CF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93FB2E232A8E9C5000039CF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		93FB2E3A2A8E9F5900039CF0 /* CalcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		93FB2E1B2A8E9C4E00039CF0 /* SimpleCalc Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				93FB2E392A8E9F3B00039CF0 /* CalcUiViews */,
 				93FB2E1C2A8E9C4E00039CF0 /* SimpleCalcApp.swift */,
 				93FB2E1E2A8E9C4E00039CF0 /* ContentView.swift */,
 				93FB2E202A8E9C5000039CF0 /* Assets.xcassets */,
@@ -92,6 +95,14 @@
 				93FB2E232A8E9C5000039CF0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		93FB2E392A8E9F3B00039CF0 /* CalcUiViews */ = {
+			isa = PBXGroup;
+			children = (
+				93FB2E3A2A8E9F5900039CF0 /* CalcButton.swift */,
+			);
+			path = CalcUiViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FB2E1F2A8E9C4E00039CF0 /* ContentView.swift in Sources */,
+				93FB2E3B2A8E9F5900039CF0 /* CalcButton.swift in Sources */,
 				93FB2E1D2A8E9C4E00039CF0 /* SimpleCalcApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
