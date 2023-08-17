@@ -8,6 +8,3 @@ A simple calculator for the Apple Watch written in SwiftUi.
 
 ![Simulator Screen Shot - Apple Watch Series 6 (40mm) - 2023-08-18 at 01 30 15](https://github.com/gauravtakroro/SimpleCalculatorWatchAppWithSwiftUi/assets/68221862/38afd47d-7040-4280-bf97-e6f9b103c1c3)
 
-
-License
-Apple Watch Calculator is released under the MIT license. See LICENSE for details.
