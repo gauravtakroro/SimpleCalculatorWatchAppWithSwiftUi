@@ -5,8 +5,6 @@
 //  Created by Gaurav Tak on 18/08/23.
 //
 
-
-
 import SwiftUI
 
 protocol CalcViewModelProtocol: ObservableObject {
