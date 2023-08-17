@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SimpleCalc Watch App
 //
-//  Created by Roro Solutions LLP on 17/08/23.
+//  Created by Gaurav Tak on 17/08/23.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Simple Calc")
         }
         .padding()
     }
